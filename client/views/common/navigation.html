@@ -1,36 +1,65 @@
 <template name="navigation">
-    <nav class="navbar-default navbar-static-side" role="navigation">
-        <div class="sidebar-collapse">
+  <nav class="navbar-default navbar-static-side" role="navigation">
+    <div class="sidebar-collapse">
 
-            <!-- Close canvas menu used only on OffCanvas page -->
-            <!-- You can remove this tag if you dont use offCanvas menu -->
-            <a class="close-canvas-menu"><i class="fa fa-times"></i></a>
-            <!-- End offCanvas menu toggle -->
+      <!-- Close canvas menu used only on OffCanvas page -->
+      <!-- You can remove this tag if you dont use offCanvas menu -->
+      <a class="close-canvas-menu"><i class="fa fa-times"></i></a>
+      <!-- End offCanvas menu toggle -->
 
-            <ul class="nav" id="side-menu">
-                <li class="nav-header">
-                    <div class="dropdown profile-element">
-                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                            <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold">Example user</strong>
-                             </span> <span class="text-muted text-xs block">user <b class="caret"></b></span> </span> </a>
-                        <ul class="dropdown-menu animated fadeInRight m-t-xs">
-                            <li><a href="#">Item</a></li>
-                            <li><a href="#">Item</a></li>
-                            <li class="divider"></li>
-                            <li><a href="#">Item</a></li>
-                        </ul>
-                    </div>
-                    <div class="logo-element">
-                        IN+
-                    </div>
-                </li>
-                <li class="{{isActiveRoute regex='pageOne'}}">
-                    <a href="{{pathFor route='pageOne'}}"><i class="fa fa-dashboard"></i> <span class="nav-label">Page one</span> </a>
-                </li>          <li class="{{isActiveRoute regex='pageTwo'}}">
-                    <a href="{{pathFor route='pageTwo'}}"><i class="fa fa-diamond"></i> <span class="nav-label">Page two</span> </a>
-                </li>
+      <ul class="nav" id="side-menu">
+        <li class="nav-header">
+          <div class="dropdown profile-element">
+            <span>
+              <img alt="image" class="img-circle" src="/img/profile_small.jpg" />
+            </span>
+            <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+              <span class="clear">
+                <span class="block m-t-xs">
+                  <strong class="font-bold">와우팜파트너즈</strong>
+                </span>
+                <span class="text-muted text-xs block">관리자
+                  <b class="caret"></b>
+                </span>
+              </span>
+            </a>
+            <ul class="dropdown-menu animated fadeInRight m-t-xs">
+              <li><a href="">설정</a></li>
+              <li><a href="#">로그아웃</a></li>
             </ul>
+          </div>
+          <div class="logo-element">WP</div>
+        </li>
+        <li class="{{isActiveRoute regex='home'}}">
+          <a href="{{pathFor route='home'}}"><i class="fa fa-home"></i> <span class="nav-label">Welcome</span> </a>
+        </li>
+        <li class="{{isActiveRoute regex='dashboard'}}">
+          <a href="{{pathFor route='dashboard'}}"><i class="fa fa-dashboard"></i> <span class="nav-label">대시보드</span> </a>
+        </li>
+        <li class="{{isActiveRoute regex='dashboard2'}}">
+          <a href="{{pathFor route='dashboard2'}}"><i class="fa fa-dashboard"></i> <span class="nav-label">대시보드_초기</span> </a>
+        </li>
+        <li class="{{isActiveRoute regex='compare'}}">
+          <a href="{{pathFor route='compare'}}"><i class="fa fa-check-square-o"></i> <span class="nav-label">최저가 비교</span> </a>
+        </li>
+        <!-- <li class="{{isActiveRoute regex='resource'}}">
+        <a href="{{pathFor route='resource'}}"><i class="fa fa-list-ul"></i> <span class="nav-label">자원 관리</span> </a>
+      </li> -->
+        <li class="{{isActiveRoute regex='resource|companys|users'}}">
+          <a href="#"><i class="fa fa-list-ul"></i> <span class="nav-label">자원관리</span> <span class="fa arrow"></span></a>
+          <ul class="nav nav-second-level collapse {{isActiveRoute regex='resource|companys|users' className='in'}}">
+            <li class="{{isActiveRoute regex='companys'}}"><a href="{{pathFor route='companys'}}">협력도매 관리</a></li>
+            <li class="{{isActiveRoute regex='users'}}"><a href="{{pathFor route='users'}}">사용자 관리</a></li>
+          </ul>
+        </li>
+        <li class="{{isActiveRoute regex='wowtalk'}}">
+          <a href="{{pathFor route='wowtalk'}}"><i class="fa fa-comments-o"></i> <span class="nav-label">와우톡</span> </a>
+        </li>
+        <li class="{{isActiveRoute regex='beta'}}">
+          <a href="{{pathFor route='beta'}}"><i class="fa fa-thumbs-up"></i> <span class="nav-label">베타기능</span> </a>
+        </li>
+      </ul>
 
-        </div>
-    </nav>
+    </div>
+  </nav>
 </template>

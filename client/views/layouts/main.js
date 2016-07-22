@@ -1,4 +1,4 @@
-Template.mainLayout.rendered = function(){
+Template.mainLayout.onRendered(function() {
 
     // Minimalize menu when screen is less than 768px
     $(window).bind("resize load", function () {
@@ -53,4 +53,16 @@ Template.mainLayout.rendered = function(){
     // $('body').addClass('boxed-layout');
 
 
-};
+});
+
+Template.mainLayout.helpers({
+  isSidebarContent : function() {
+    var result = '';
+    var sidebarContents = ["home"];
+
+    if (sidebarContents.indexOf(FlowRouter.getRouteName().toString()) !== -1) {
+      result = 'sidebar-content';
+    }
+    return result;
+  }
+});

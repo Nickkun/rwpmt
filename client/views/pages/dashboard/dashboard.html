@@ -1,0 +1,260 @@
+<template name="dashboard">
+  <div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+      <div class="col-lg-12">
+
+        <div class="col-lg-2">
+          <div class="ibox float-e-margins">
+            <div class="ibox-title">
+              <span class="label label-success pull-right">Result</span>
+              <h5>최종발주</h5>
+            </div>
+            <div class="ibox-content">
+              <h1 class="no-margins font-bold text-success">4,500</h1>
+              <div class="stat-percent font-bold text-primary">45%</div>
+              <small>품목수</small>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-10">
+          <div class="ibox float-e-margins">
+            <div class="ibox-title">
+              <span class="label label-primary pull-right">Filtering</span>
+              <h5>처리현황</h5>
+            </div>
+            <div class="ibox-content">
+              <div class="row">
+                <div class="col-md-3">
+                  <h1 class="no-margins text-muted">10,000</h1>
+                  <div class="stat-percent font-bold text-info">100%</div>
+                  <small>총 발주요청 품목</small>
+                </div>
+                <div class="col-md-3">
+                  <h1 class="no-margins text-muted">2,000</h1>
+                  <div class="stat-percent font-bold text-danger">20% <i class="fa fa-level-down"></i></div>
+                  <small>표준코드가 없는 품목</small>
+                </div>
+                <div class="col-md-3">
+                  <h1 class="no-margins text-muted">1,000</h1>
+                  <div class="stat-percent font-bold text-danger">10% <i class="fa fa-level-down"></i></div>
+                  <small>발주수량이 없는 품목(0 이하)</small>
+                </div>
+                <div class="col-md-3">
+                  <h1 class="no-margins text-muted">2,500</h1>
+                  <div class="stat-percent font-bold text-danger">25% <i class="fa fa-level-down"></i></div>
+                  <small>표준코드가 중복된 품목</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="col-lg-12">
+      <div class="ibox float-e-margins">
+        <div class="ibox-title">
+          <h5>협력도매 처리현황</h5>
+          {{> iBoxConfig}}
+        </div>
+        <div class="ibox-content">
+          <canvas id="barChart" height="80"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <div class="ibox-content forum-container">
+      <div class="forum-title">
+        <div class="pull-right forum-desc">
+          <samll>총 주문 품목 : 4,500</samll>
+        </div>
+        <h3>협력도매 재고</h3>
+      </div>
+
+      <div class="forum-item">
+        <div class="row">
+          <div class="col-md-9">
+            <div class="forum-icon">
+              <i class="fa fa-building-o"></i>
+            </div>
+            <a href="forum_post.html" class="forum-item-title">유진의약품</a>
+            <div class="forum-sub-title">김유진 / 02-874-8963 / 서울특별시 동대문구 고산자로 513</div>
+          </div>
+          <div class="col-md-1 forum-info">
+            <span class="views-number">
+              1216
+            </span>
+            <div>
+              <small>품목 수</small>
+            </div>
+          </div>
+          <div class="col-md-offset-1 col-md-1 forum-info">
+            <span class="views-number">
+              368
+            </span>
+            <div>
+              <small>주문 수</small>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="forum-item">
+        <div class="row">
+          <div class="col-md-9">
+            <div class="forum-icon">
+              <i class="fa fa-building-o"></i>
+            </div>
+            <a href="forum_post.html" class="forum-item-title">골드팜</a>
+            <div class="forum-sub-title">조진환 부사장 / 02-2216-7300 / 서울특별시 동대문구 장안동 212</div>
+          </div>
+          <div class="col-md-1 forum-info">
+            <span class="views-number">
+              443
+            </span>
+            <div>
+              <small>품목 수</small>
+            </div>
+          </div>
+          <div class="col-md-offset-1 col-md-1 forum-info">
+            <span class="views-number">
+              <i class="fa fa-spinner fa-pulse fa-fw"></i>
+            </span>
+            <div>
+              <small>주문 수</small>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="forum-item">
+        <div class="row">
+          <div class="col-md-9">
+            <div class="forum-icon">
+              <i class="fa fa-building-o"></i>
+            </div>
+            <a href="forum_post.html" class="forum-item-title">서진메디팜</a>
+            <div class="forum-sub-title">김대환 전무 / 02-2676-1983 / 서울특별시 영등포구 양평로 30길 22</div>
+          </div>
+          <div class="col-md-1 forum-info">
+            <span class="views-number">
+              2212
+            </span>
+            <div>
+              <small>품목 수</small>
+            </div>
+          </div>
+          <div class="col-md-offset-1 col-md-1 forum-info">
+            <span class="views-number">
+              324
+            </span>
+            <div>
+              <small>주문 수</small>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="forum-item">
+        <div class="row">
+          <div class="col-md-9">
+            <div class="forum-icon">
+              <i class="fa fa-building-o"></i>
+            </div>
+            <a href="forum_post.html" class="forum-item-title">케이에스씨팜</a>
+            <div class="forum-sub-title">김길수 부장 / 02-1234-5678 / 서울특별시 성동구 금호3길 223</div>
+          </div>
+          <div class="col-md-1 forum-info">
+            <span class="views-number">
+              121
+            </span>
+            <div>
+              <small>품목 수</small>
+            </div>
+          </div>
+          <div class="col-md-offset-1 col-md-1 forum-info">
+            <span class="views-number">
+              <i class="fa fa-spinner fa-pulse fa-fw"></i>
+            </span>
+            <div>
+              <small>주문 수</small>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="forum-item">
+        <div class="row">
+          <div class="col-md-9">
+            <div class="forum-icon">
+              <i class="fa fa-building-o"></i>
+            </div>
+            <a href="forum_post.html" class="forum-item-title">활안약품</a>
+            <div class="forum-sub-title">백상각 부사장 / 02-921-7611 / 서울특별시 동대문구 고산자로 476</div>
+          </div>
+          <div class="col-md-1 forum-info">
+            <span class="views-number">
+              3232
+            </span>
+            <div>
+              <small>품목 수</small>
+            </div>
+          </div>
+          <div class="col-md-offset-1 col-md-1 forum-info">
+            <span class="views-number">
+              <i class="fa fa-spinner fa-spin"></i>
+            </span>
+            <div>
+              <small>주문 수</small>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="forum-item">
+        <div class="row">
+          <div class="col-md-9">
+            <div class="forum-icon">
+              <i class="fa fa-building-o"></i>
+            </div>
+            <a href="forum_post.html" class="forum-item-title">에프에스팜</a>
+            <div class="forum-sub-title">전한기 부사장 / 02-2249-1060 / 서울특별시 동대문구 사가정로 203</div>
+          </div>
+          <div class="col-md-1 forum-info">
+            <span class="views-number">
+              443
+            </span>
+            <div>
+              <small>품목 수</small>
+            </div>
+          </div>
+          <div class="col-md-offset-1 col-md-1 forum-info">
+            <span class="views-number">
+              <i class="fa fa-spinner fa-spin"></i>
+            </span>
+            <div>
+              <small>주문 수</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<template name="iBoxConfig">
+  <div class="ibox-tools">
+    <a class="collapse-link">
+      <i class="fa fa-chevron-up"></i>
+    </a>
+    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+      <i class="fa fa-wrench"></i>
+    </a>
+    <ul class="dropdown-menu dropdown-user">
+      <li><a href="#">Config option 1</a>
+      </li>
+      <li><a href="#">Config option 2</a>
+      </li>
+    </ul>
+    <a class="close-link">
+      <i class="fa fa-times"></i>
+    </a>
+  </div>
+</template>

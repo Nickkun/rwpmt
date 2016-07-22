@@ -1,0 +1,183 @@
+<template name="compare">
+  <div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox">
+                <div class="ibox-title">
+                    <h5>최저가 비교 마법사</h5>
+                    <div class="ibox-tools">
+                        <a class="collapse-link">
+                            <i class="fa fa-chevron-up"></i>
+                        </a>
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                            <i class="fa fa-wrench"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-user">
+                            <li><a href="#">Config option 1</a>
+                            </li>
+                            <li><a href="#">Config option 2</a>
+                            </li>
+                        </ul>
+                        <a class="close-link">
+                            <i class="fa fa-times"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="ibox-content">
+                    <h2>
+                    최저가 비교
+                </h2>
+                    <p>
+                        다음의 순서대로 최저가 품목을 비교합니다.
+                    </p>
+
+                    <form id="form" action="#" class="wizard-big">
+                        <h1>발주내역 등록</h1>
+                        <fieldset>
+                          <h2>발주내역서 업로드</h2>
+                          <p>발주를 요청하실 내역서를 파일로 업로드합니다.</p>
+                          <div class="row">
+                            <div class="col-lg-6">
+                              <p>※ 제목열은 다음의 키워드를 포함해야 합니다.</p>
+                              <table class="table table-bordered table-striped table-condensed">
+                                <tbody>
+                                  <tr>
+                                    <td class="info">표준코드</td>
+                                    <td>발주할 제품의 표준코드입니다</td>
+                                  </tr>
+                                  <tr>
+                                    <td class="info">규격 / 포장</td>
+                                    <td>제품의 규격이나 표장내역입니다.</td>
+                                  </tr>
+                                  <tr>
+                                    <td class="info">제품명 / 품명</td>
+                                    <td>제품의 이름입니다.</td>
+                                  </tr>
+                                  <tr>
+                                    <td class="info">보험단가 / 단가</td>
+                                    <td>제품의 단가입니다.</td>
+                                  </tr>
+                                  <tr>
+                                    <td class="info">발주수량 / 수량</td>
+                                    <td>발주를 처리할 수량입니다.</td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </div>
+                            <div class="col-lg-6">
+                              <p>발주내역 등록시 사용할 파일의 형식은<br>다음의 템플릿 형식을 기준하시기 바랍니다.</p>
+                              <a href="">발주내역서 템플릿 다운로드</a>
+                              <hr>
+                              <a href="" class="btn btn-success">발주내역서 등록</a>
+                              <div class="form-group">
+                                <label>파일형식 : xls, xlsx (*)</label>
+                                <!-- 필수로 넣으려면 required class 추가 -->
+                                <input id="orders" name="orders" type="file" class="form-control">
+                              </div>
+                            </div>
+                          </div>
+                        </fieldset>
+                        <h1>발주내역 확인</h1>
+                        <fieldset class="w100">
+                          <div class="row">
+                            <div class="col-lg-8">
+                              <h2>발주내역 확인</h2>
+                              <p>다음의 결과로 업로드가 제대로 되었는지 확인하세요</p>
+                            </div>
+                            <div class="col-lg-4"></div>
+                          </div>
+                          <div class="row">
+                            <div class="col-lg-12">
+                              <table class="table table-bordered table-striped table-condensed">
+                                <thead>
+                                  <tr>
+                                    <th class="text-center">발주번호</th>
+                                    <th class="text-center">표준코드</th>
+                                    <th class="text-center">제품명</th>
+                                    <th class="text-center">규격</th>
+                                    <th class="text-center">표준단가</th>
+                                    <th class="text-center">주문수량</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr>
+                                    <td class="text-center">1</td>
+                                    <td class="text-center">8806214561245</td>
+                                    <td>갈더 데스오웬 크림</td>
+                                    <td>10/100T</td>
+                                    <td class="text-right">10,000</td>
+                                    <td class="text-right">234</td>
+                                  </tr>
+                                  <tr>
+                                    <td class="text-center">2</td>
+                                    <td class="text-center">8806211000417</td>
+                                    <td>현대 살라겐정</td>
+                                    <td>5mg/30T</td>
+                                    <td class="text-right">66,900</td>
+                                    <td class="text-right">28</td>
+                                  </tr>
+                                  <tr>
+                                    <td class="text-center">3</td>
+                                    <td class="text-center">8806242000127</td>
+                                    <td>지엘 지소렌정</td>
+                                    <td>60mg/500T</td>
+                                    <td class="text-right">81,000</td>
+                                    <td class="text-right">15</td>
+                                  </tr>
+                                  <tr>
+                                    <td class="text-center">4</td>
+                                    <td class="text-center">8806259000417</td>
+                                    <td>유한 비리어드정</td>
+                                    <td>300mg/30T</td>
+                                    <td class="text-right">147,300</td>
+                                    <td class="text-right">372</td>
+                                  </tr>
+                                  <tr>
+                                    <td class="text-center">5</td>
+                                    <td class="text-center">8806556001124</td>
+                                    <td>한올 나푸릴캡슐</td>
+                                    <td>100mg/100C</td>
+                                    <td class="text-right">12,500</td>
+                                    <td class="text-right">7</td>
+                                  </tr>
+                                  <tr>
+                                    <td colspan=6 class="text-center">...</td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </div>
+                          </div>
+                        </fieldset>
+                        <h1>재고내역 등록</h1>
+                        <fieldset>
+                            <h2>협력도매별 재고내역서 업로드</h2>
+                            <div class="row">
+                              <div class="col-lg-12">
+                                <table class="table table-bordered table-striped table-condensed">
+                                  <thead>
+                                    <tr>
+                                      <th class="text-center">회사명</th>
+                                      <th class="text-center">사업자등록번호</th>
+                                      <th class="text-center">담당자</th>
+                                      <th class="text-center">직급</th>
+                                      <th class="text-center">전화번호</th>
+                                      <th class="text-center">전체품목수</th>
+                                      <th class="text-center">유효품목수</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                    <tr>
+                                      <td class="text-center" colspan=7>등록된 재고내역이 없습니다</td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </div>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+</template>
