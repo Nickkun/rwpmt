@@ -30,3 +30,9 @@ kadira:flow-router
 kadira:blaze-layout
 arillo:flow-router-helpers
 http
+useraccounts:core
+accounts-password
+useraccounts:bootstrap
+useraccounts:flow-routing
+softwarerero:accounts-t9n
+aldeed:template-extension

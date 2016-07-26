@@ -1,9 +1,34 @@
+AccountsTemplates.configure({
+  forbidClientAccountCreation: true
+});
+
+AccountsTemplates.configureRoute('signIn', {
+  layoutType: 'blaze',
+  name: 'signin',
+  path: '/signIn',
+  template: 'accounts',
+  layoutTemplate: 'accountsLayout',
+  layoutRegions: {},
+  contentRegion: 'content'
+});
+
+
+FlowRouter.triggers.enter([AccountsTemplates.ensureSignedIn]);
+
 FlowRouter.route('/', {
   name : 'home',
   action : function(params) {
     BlazeLayout.render("mainLayout", {content : "welcome"});
   }
 });
+
+FlowRouter.route('/logout', {
+  name : 'logout',
+  action : function(params) {
+    AccountsTemplates.logout();
+  }
+});
+
 
 FlowRouter.route('/dashboard', {
   name : 'dashboard',
